@@ -1,0 +1,66 @@
+name: Build & Deploy to Railway
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Cache Composer
+      uses: actions/cache@v4
+      with:
+        path: ~/.composer/cache
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: ${{ runner.os }}-composer-
+
+    - name: Install PHP dependencies
+      run: composer install --no-progress --no-suggest --prefer-dist --no-interaction --optimize-autoloader
+
+    - name: Install Node dependencies
+      run: npm ci
+
+    - name: Build assets
+      run: npm run build --if-present
+
+    - name: Prepare application
+      env:
+        APP_KEY: ${{ secrets.APP_KEY }}
+        APP_ENV: production
+      run: |
+        if [ -z "${APP_KEY}" ]; then
+          echo "APP_KEY not set in secrets. Generating temporary key for build.";
+          php artisan key:generate --force;
+        else
+          php artisan key:generate --force --show >/dev/null || true
+        fi
+        php artisan view:clear || true
+        php artisan config:cache || true
+
+    - name: Install Railway CLI
+      run: npm i -g @railway/cli
+
+    - name: Deploy to Railway
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      run: |
+        echo "Deploying to Railway..."
+        railway up --yes
+
+    - name: Done
+      run: echo "Build and (attempted) deploy finished."
