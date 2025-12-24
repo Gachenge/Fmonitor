@@ -4,8 +4,6 @@
 
 @section('content')
     <div>
-        <h2>Leadership & Management</h2>
-
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
             <div class="card">
                 <strong>Dr. Gichuru Maina, PhD</strong>

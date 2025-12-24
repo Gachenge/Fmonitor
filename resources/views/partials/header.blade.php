@@ -15,6 +15,8 @@
             <a href="#programs">Programs</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
+            <a href="{{ route('about') }}">About us</a>
+            <a href="{{ route('team') }}">Our Team</a>
         </nav>
     </header>
 </div>

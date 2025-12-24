@@ -4,7 +4,6 @@
 
 @section('content')
     <div style="background:var(--card);padding:20px;border-radius:12px;border:1px solid #e6eef8">
-        <h2>About Fmonitor Institute</h2>
         <p>Fmonitor Institute is a professional training and consultancy organization based in Nairobi, Kenya, specializing
             in capacity building, professional development, and applied skills training. We are an affiliate of Frankmonitor
             Consulting Limited (est. 2015).</p>
