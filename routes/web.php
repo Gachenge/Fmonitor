@@ -10,20 +10,18 @@ Route::view('/courses', 'courses.index');
 Route::view('/services', 'services');
 Route::view('/clients', 'clients');
 Route::view('/contact', 'contact');
-Route::view('/college', 'college');
-Route::get('/health', function () {
-    return [
-        'app_key' => config('app.key') ? 'SET' : 'MISSING',
-        'env' => app()->environment(),
-    ];
-});
 Route::get('/about', function () {
-    return view('about'); // no 'pages.' prefix
+    return view('about'); 
 })->name('about');
 
 Route::get('/team', function () {
-    return view('team'); // no 'pages.' prefix
+    return view('team'); 
 })->name('team');
+
+Route::get('/college', function () {
+    return view('college'); 
+})->name('college');
+
 Route::get('/careers', function () {
-    return view('careers'); // no 'pages.' prefix
+    return view('careers'); 
 })->name('careers');

@@ -233,8 +233,6 @@
 
         .testimonials {
     background: #f9fafb;
-    padding: 80px 20px;
-
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 16px;
@@ -290,7 +288,7 @@
 .programs {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 10px 20px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -399,37 +397,8 @@
     }
 }
 
-   .cta-strip {
-    background: #111827;
-    color: #fff;
-
-    padding: 48px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.cta-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.cta-sub {
-    color: #d1d5db;
-}
-
-.cta-strip .btn-outline {
-    border-color: #fff;
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    .cta-strip {
-        flex-direction: column;
-        text-align: center;
-    }
-}
+                  
+----+
 
 /* Vertical rhythm reset */
 h1, h2, h3, h4, p {
