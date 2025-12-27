@@ -32,6 +32,7 @@
 
         @include('partials.footer')
     </div>
+    <button id="backToTop" aria-label="Back to top">↑</button>
 </body>
 
 </html>
