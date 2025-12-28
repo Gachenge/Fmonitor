@@ -35,13 +35,6 @@
             color: #0f172a;
             -webkit-font-smoothing: antialiased
         }
-        /* Header */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 0
-        }
 
         .brand {
             display: flex;
@@ -63,7 +56,17 @@
         }
         .logo img { width:100%; height:100%; display:block; object-fit:cover; }
 
-        nav {
+/* Header */
+header {
+    position: relative; /* 🔴 REQUIRED for absolute nav */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+/* Desktop nav */
+nav {
     display: flex;
     gap: 20px;
 }
@@ -74,6 +77,7 @@ nav a {
     font-weight: 600;
 }
 
+/* Toggle button */
 .nav-toggle {
     display: none;
     font-size: 26px;
@@ -82,8 +86,9 @@ nav a {
     cursor: pointer;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+
     .nav-toggle {
         display: block;
     }
@@ -94,17 +99,24 @@ nav a {
         right: 0;
         background: #ffd1e3;
         flex-direction: column;
-        width: 200px;
+        width: 220px;
         padding: 12px;
         gap: 12px;
+
+        /* hidden by default */
         display: none;
-        box-shadow: 0 10px 30px rgba(0,0,0,.1);
+
+        box-shadow: 0 10px 30px rgba(0,0,0,.15);
+        border-radius: 8px;
+        z-index: 1000;
     }
 
     nav.open {
         display: flex;
     }
-}       .hero {
+}
+
+.hero {
             width: 100vw;
     min-height: calc(100vh - 80px);
             margin: 0;
