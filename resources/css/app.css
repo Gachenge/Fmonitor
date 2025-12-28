@@ -1,5 +1,3 @@
-@import 'tailwindcss';
-
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
@@ -17,10 +15,8 @@
             --muted: #475569; /* slightly deeper muted */
             --bg: #f3fbfb; /* light cyan background for freshness */
             --card: #ffffff;
+            --text: #0f172a;
         }
-
-        body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-          color:var(--text);background:var(--bg);margin:0;line-height:1.45}
 
         .wrap{max-width:1100px;margin:28px auto;padding:0 18px}
 
@@ -28,13 +24,13 @@
             box-sizing: border-box
         }
 
-        body {
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-            margin: 0;
-            background: var(--bg);
-            color: #0f172a;
-            -webkit-font-smoothing: antialiased
-        }
+body {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+}
 
         .brand {
             display: flex;
@@ -58,7 +54,7 @@
 
 /* Header */
 header {
-    position: relative; /* 🔴 REQUIRED for absolute nav */
+    position: relative; /* REQUIRED for dropdown, still static */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -102,18 +98,20 @@ nav a {
         width: 220px;
         padding: 12px;
         gap: 12px;
-
-        /* hidden by default */
         display: none;
-
         box-shadow: 0 10px 30px rgba(0,0,0,.15);
-        border-radius: 8px;
         z-index: 1000;
     }
 
     nav.open {
         display: flex;
     }
+}
+
+.brand-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
 }
 
 .hero {
@@ -247,16 +245,6 @@ nav a {
         }
         .btn-ghost:hover { border-color: rgba(23,190,187,0.22); color: var(--accent-2); }
 
-        .testimonials {
-    background: #f9fafb;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 16px;
-    align-items: start;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
 .test-cards {
     display: grid;
     gap: 24px;
@@ -347,13 +335,14 @@ nav a {
     }
 }
 
-        /* Testimonials */
-        .testimonials {
-            margin-top: 20px;
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 20px
-        }
+      .testimonials {
+    background: #f9fafb;
+    max-width: 1100px;
+    margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
 
         .test-cards {
             display: flex;
@@ -737,4 +726,35 @@ p,
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    z-index: 999;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,.3);
+}
+
+/* Mobile spacing */
+@media (max-width: 640px) {
+    .whatsapp-float {
+        bottom: 18px;
+        right: 18px;
+        width: 52px;
+        height: 52px;
+    }
 }

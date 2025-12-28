@@ -3,12 +3,11 @@
     <a href="{{ url('/') }}" class="brand-link">
         <div class="brand" style="display:flex;align-items:center;gap:12px;">
             <div class="logo">
-                <img src="{{ asset('images/fmonitor.jpeg') }}" alt="Fmonitor Institute logo"
-                     style="width:56px;height:56px;display:block;border-radius:10px">
+               <img src="{{ asset('images/fmonitor.jpeg') }}" alt="Fmonitor Institute logo">
             </div>
             <div>
-                <div style="font-weight:700">Fmonitor Institute</div>
-                <div style="font-size:12px;color:var(--muted)">Empowering curious minds</div>
+                <div style="font-weight:700; text-decoration: none;">Fmonitor Institute</div>
+                <div style="font-size:12px;color:var(--muted); text-decoration: none;">Empowering curious minds</div>
             </div>
         </div>
     </a>
