@@ -1,4 +1,4 @@
-<header style="padding:12px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#ffd1e3;">
+<header>
     
     <a href="{{ url('/') }}" class="brand-link">
         <div class="brand" style="display:flex;align-items:center;gap:12px;">
