@@ -25,4 +25,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ================= PROGRAMS CAROUSEL ================= */
+    const track = document.querySelector('.carousel-track');
+    if (track) {
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.carousel-nav.next');
+        const prevButton = document.querySelector('.carousel-nav.prev');
+
+        let currentIndex = 0;
+
+        function updateSlidePosition() {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+
+        nextButton?.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) currentIndex++;
+            else currentIndex = 0;
+            updateSlidePosition();
+        });
+
+        prevButton?.addEventListener('click', () => {
+            if (currentIndex > 0) currentIndex--;
+            else currentIndex = slides.length - 1;
+            updateSlidePosition();
+        });
+
+        window.addEventListener('resize', updateSlidePosition);
+
+        // Optional: autoplay every 5 seconds
+        setInterval(() => {
+            if (currentIndex < slides.length - 1) currentIndex++;
+            else currentIndex = 0;
+            updateSlidePosition();
+        }, 5000);
+    }
 });

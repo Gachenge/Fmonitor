@@ -15,7 +15,7 @@
     <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
 
     <nav>
-    <a href="{{ route('college') }}#programs">Programs</a>
+    <a href="{{ route('college') }}#programs">Courses</a>
     <a href="{{ route('college') }}#contact">Contact</a>
     <a href="{{ route('college') }}">Home</a>
     <a href="{{ route('about') }}">About us</a>

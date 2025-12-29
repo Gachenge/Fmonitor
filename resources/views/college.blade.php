@@ -2,9 +2,12 @@
 
 @section('title', 'Fmonitor Institute')
 @section('fullwidth')
-<section class="hero">
-    <div class="hero-inner">
-        <div class="hero-content">
+<section class="hero hero--fullbg">
+    <div class="hero-bg"
+    style='background-image: url("{{ asset("images/hero.jpeg") }}");'></div>
+
+    <div class="hero-inner hero-inner--centered">
+        <div class="hero-content hero-content--centered">
             <div class="kicker">Undergraduate • Graduate • Online</div>
 
             <h1>Future-ready education for every learner</h1>
@@ -19,7 +22,6 @@
                 <a class="btn btn-ghost" href="#programs">Explore Programs</a>
             </div>
 
-            <!-- ✅ STATS GRID -->
             <div class="stat-list">
                 <div class="stat">
                     <div class="stat-icon">👩‍🏫</div>
@@ -40,47 +42,149 @@
                 </div>
             </div>
         </div>
-
-        <!-- IMAGE SIDE -->
-        <aside class="hero-aside">
-            <div class="card-back"></div>
-            <img
-                src="{{ asset('images/graduates.jpg') }}"
-                alt="Horizon College Campus"
-                class="hero-image"
-            >
-        </aside>
     </div>
 </section>
 
 @endsection
 @section('content')
-        <div class="kicker">Some of our programs</div>
-    <section id="programs" class="programs">
-        <div class="prog">
-            <svg viewBox="0 0 24 24" fill="none" class="prog-icon" aria-hidden="true">
-                <path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <h3>Computer Science</h3>
-            <p class="muted">Software engineering, AI & data science with hands-on labs and industry projects.</p>
+        <div class="kicker">Some of our courses</div>
+ <section id="programs" class="programs-carousel">
+    <div class="carousel-wrapper">
+        <button class="carousel-nav prev" aria-label="Previous">&#10094;</button>
+
+        <div class="carousel-track">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Results-Based Monitoring and Evaluation (RBM&E)</h3>
+                    <p class="muted">Learn how to plan, track, and measure results using outcomes, indicators, and performance frameworks to improve project effectiveness.</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Resource Mobilization and Fundraising</h3>
+                    <p class="muted">Build practical skills to identify funding opportunities, write winning proposals, and develop sustainable fundraising strategies.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Risk Management</h3>
+                    <p class="muted">Understand how to identify, assess, and manage risks to protect projects, organizations, and strategic objectives.</p>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Strategic Management</h3>
+                    <p class="muted">Develop skills to design, implement, and evaluate strategies that drive organizational growth and long-term success.</p>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Leadership and Management</h3>
+                    <p class="muted">Strengthen leadership capabilities and management practices to lead teams effectively and achieve organizational goals.</p>
+                </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Data Analysis Software Training (SPSS, STATA, Excel, Power BI, etc.)</h3>
+                    <p class="muted">Gain hands-on training in data analysis tools to collect, analyze, visualize, and interpret data for informed decision-making.</p>
+                </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Project Performance Evaluation</h3>
+                    <p class="muted">Learn how to assess project efficiency, effectiveness, relevance, and sustainability using evaluation frameworks and tools.</p>
+                </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>M&E for Community Projects</h3>
+                    <p class="muted">Build skills to design and implement M&E systems tailored to community-based and grassroots development projects.</p>
+                </div>
+            </div>
+
+            <!-- Slide 9 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Project Management, Monitoring and Evaluation</h3>
+                    <p class="muted">Master the full project cycle—from planning and implementation to monitoring, evaluation, and reporting.</p>
+                </div>
+            </div>
+
+            <!-- Slide 10 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Monitoring and Evaluation for Humanitarian Interventions</h3>
+                    <p class="muted">Develop M&E skills suited for emergency and humanitarian contexts, focusing on accountability, learning, and results.</p>
+                </div>
+            </div>
+
+            <!-- Slide 11 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Monitoring and Evaluation for Effective Governance Programs</h3>
+                    <p class="muted">Learn how to track and evaluate governance initiatives to promote transparency, accountability, and service delivery.</p>
+                </div>
+            </div>
+
+            <!-- Slide 12 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Impact Evaluation for Evidence-Based Development</h3>
+                    <p class="muted">Understand impact evaluation methods to measure long-term outcomes and inform policy and development decisions.</p>
+                </div>
+            </div>
+
+            <!-- Slide 13 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Participatory Monitoring and Evaluation</h3>
+                    <p class="muted">Learn participatory approaches that actively engage stakeholders and communities in tracking and evaluating projects.</p>
+                </div>
+            </div>
+
+            <!-- Slide 14 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Project Monitoring and Evaluation with Data Management and Analysis</h3>
+                    <p class="muted">Gain practical skills in managing M&E data, analyzing results, and producing evidence-based reports.</p>
+                </div>
+            </div>
+
+            <!-- Slide 15 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Project Design Using Logframe Approach</h3>
+                    <p class="muted">Learn how to design clear, results-focused projects using logical frameworks, indicators, and assumptions.</p>
+                </div>
+            </div>
+
+            <!-- Slide 16 -->
+            <div class="carousel-slide">
+                <div class="prog">
+                    <h3>Gender Responsive Monitoring and Evaluation</h3>
+                    <p class="muted">Develop skills to integrate gender perspectives into M&E systems for inclusive and equitable development outcomes.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="prog">
-            <svg viewBox="0 0 24 24" fill="none" class="prog-icon" aria-hidden="true">
-                <path d="M4 7h16M4 12h10M4 17h16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <h3>Business & Entrepreneurship</h3>
-            <p class="muted">Startup incubator, mentorship, and real-world consulting projects.</p>
-        </div>
-
-        <div class="prog">
-            <svg viewBox="0 0 24 24" fill="none" class="prog-icon" aria-hidden="true">
-                <path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7l3-7z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <h3>Arts & Design</h3>
-            <p class="muted">Portfolio-led studio practice, exhibitions, and industry collaborations.</p>
-        </div>
-    </section>
+        <button class="carousel-nav next" aria-label="Next">&#10095;</button>
+    </div>
+</section>
 
         <div class="kicker">What our clients are saying</div>
     <section id="testimonials" class="testimonials">
@@ -120,7 +224,6 @@
         <div class="kicker">Contact us</div>
     <section id="contact" class="contact-section" style="padding: 80px 20px; background: #f3fbfb;">
     <div class="container" style="max-width:1100px; margin:0 auto; display:flex; gap:40px; flex-wrap:wrap;">
-
         <!-- Left Column: Contact Info & Socials -->
         <div class="col-6" style="flex:2; min-width:300px;">
             <div class="cta-sub" style="margin-bottom:24px; color:var(--muted); line-height:1.6;">
@@ -129,7 +232,8 @@
 
             <div class="contact-info" style="margin-bottom:24px;">
                 <p><span style="font-weight:600;">Email:</span> <a href="mailto:admissions@fmonitor.edu" style="color:var(--accent);">admissions@fmonitor.edu</a></p>
-                <p><span style="font-weight:600;">Phone:</span> (555) 123-4567</p>
+                <p><span style="font-weight:600;">Phone:</span> +254 721 782738 | +254 723623506</p>
+                <p><span style="font-weight:600;">P.O Box:</span>27660-00100 GPO</p>
                 <p><span style="font-weight:600;">Location:</span> Nairobi, Kenya</p>
             </div>
 
